@@ -22,7 +22,6 @@ public class ZookeeperPathUtils {
         String serviceZkPath = String.format(Constants.SERVICE_ZK_PATH_FORMAT, serviceName);
         pathBuilder.append(serviceZkPath);
         pathBuilder.append("/");
-
         pathBuilder.append(ip);
         pathBuilder.append(":");
         pathBuilder.append(port);
@@ -42,6 +41,7 @@ public class ZookeeperPathUtils {
             throw new IllegalArgumentException("zookeeper path should start with /!");
         }
         String pathWithoutFirstSlash = nodePath.substring(1);
+        System.out.println("pathWithoutFirstSlash = " + pathWithoutFirstSlash);
         return Iterables.size(Splitter.on(Constants.ZOOKEEPER_PATH_SEPARATOR).split(pathWithoutFirstSlash));
     }
 

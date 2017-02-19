@@ -6,9 +6,16 @@
 
     <bean id="demoService" class="org.zxc.zing.demo.impl.DemoServiceImpl" />
 
+    <bean id="demoService2" class="org.zxc.zing.demo.impl.DemoService2Impl"/>
+
     <bean class="org.zxc.zing.server.remote.RemoteServiceBean" init-method="init">
         <property name="serviceName" value="org.zxc.zing.demo.api.DemoService"/>
         <property name="serviceImpl" ref="demoService"/>
+    </bean>
+
+    <bean class="org.zxc.zing.server.remote.RemoteServiceBean" init-method="init">
+        <property name="serviceName" value="org.zxc.zing.demo.api.DemoService2"/>
+        <property name="serviceImpl" ref="demoService2"/>
     </bean>
 
 </beans>

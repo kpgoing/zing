@@ -38,8 +38,12 @@ public class DemoClientTest {
         CountDownLatch latch = new CountDownLatch(THREAD_COUNT);
         ExecutorService threadPool = Executors.newFixedThreadPool(10);
         for (int i = 0; i < THREAD_COUNT; i++) {
-            MockServiceInvocation invocation = new MockServiceInvocation(demoService, latch);
-            threadPool.submit(invocation);
+//            MockServiceInvocation invocation = new MockServiceInvocation(demoService, latch);
+            threadPool.submit(() -> {
+                String result = demoService.echo("Hello!");
+                System.out.println(result);
+                latch.countDown();
+            });
         }
         latch.await();
     }

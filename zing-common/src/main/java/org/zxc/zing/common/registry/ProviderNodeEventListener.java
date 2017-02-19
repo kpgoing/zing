@@ -20,7 +20,6 @@ public class ProviderNodeEventListener implements TreeCacheListener {
     @Override
     public void childEvent(CuratorFramework client, TreeCacheEvent event) throws Exception {
         log.info("curator event received:"+event);
-
         if (!isServiceProviderNodeChangeEvent(event)) {
             return;
         }

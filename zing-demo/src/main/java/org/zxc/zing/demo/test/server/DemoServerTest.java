@@ -4,6 +4,8 @@ package org.zxc.zing.demo.test.server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.zxc.zing.common.registry.RegistryManager;
+import org.zxc.zing.server.RemoteServiceServer;
 
 import java.util.concurrent.CountDownLatch;
 

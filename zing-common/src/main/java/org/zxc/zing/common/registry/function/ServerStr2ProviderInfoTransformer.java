@@ -16,7 +16,7 @@ public class ServerStr2ProviderInfoTransformer implements Function<String, Provi
 
     public static final ServerStr2ProviderInfoTransformer INSTANCE = new ServerStr2ProviderInfoTransformer();
 
-    @Override
+
     public ProviderInfo apply(String serverAddress) {
         if (Strings.isNullOrEmpty(serverAddress)) {
             return null;
